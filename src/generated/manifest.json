@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "operations": [
+    {
+      "signature": "6f76a651a740ef9986b329025c333ec5c85cd5e1edc334edbdab2512e8cd99c1",
+      "document": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}query ListTodos{listTodos{__typename...todo}}",
+      "metadata": {
+        "engineSignature": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}query ListTodos{listTodos{__typename...todo}}"
+      }
+    },
+    {
+      "signature": "ca875bcdf7081ad76b2735b979b4a8e56876a9cdc2021a30ec7fe6a0e81b34f8",
+      "document": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}mutation CreateTodo($text:String!){createTodo(input:{text:$text}){__typename todo{__typename...todo}}}",
+      "metadata": {
+        "engineSignature": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}mutation CreateTodo($text:String!){createTodo(input:{}){__typename todo{__typename...todo}}}"
+      }
+    },
+    {
+      "signature": "7ce20935afd8311f7a196e55020e3af0ff1d725446d91f4b2d37eb259c33586a",
+      "document": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}mutation CompleteTodo($id:ID!){completeTodo(input:{id:$id}){__typename todo{__typename...todo}}}",
+      "metadata": {
+        "engineSignature": "fragment todo on Todo{__typename completed createdBy{__typename firstName lastName}id text type}mutation CompleteTodo($id:ID!){completeTodo(input:{}){__typename todo{__typename...todo}}}"
+      }
+    },
+    {
+      "signature": "631fe29dbeace3f37b9f7c77ebb61333f891828bf90872976811eb6dbcd75f67",
+      "document": "mutation DeleteTodo($id:ID!){deleteTodo(input:{id:$id}){__typename id}}",
+      "metadata": {
+        "engineSignature": "mutation DeleteTodo($id:ID!){deleteTodo(input:{}){__typename id}}"
+      }
+    }
+  ]
+}

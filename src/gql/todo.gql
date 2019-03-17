@@ -1,0 +1,38 @@
+fragment todo on Todo {
+  id
+  text
+  createdBy {
+    firstName
+    lastName
+  }
+  completed
+  type
+}
+
+query ListTodos {
+  listTodos {
+    ...todo
+  }
+}
+
+mutation CreateTodo($text: String!) {
+  createTodo(input: { text: $text }) {
+    todo {
+      ...todo
+    }
+  }
+}
+
+mutation CompleteTodo($id: ID!) {
+  completeTodo(input: { id: $id }) {
+    todo {
+      ...todo
+    }
+  }
+}
+
+mutation DeleteTodo($id: ID!) {
+  deleteTodo(input: { id: $id }) {
+    id
+  }
+}
