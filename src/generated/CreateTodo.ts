@@ -11,7 +11,7 @@ import { TodoType } from "./globalTypes";
 export interface CreateTodo_createTodo_todo_createdBy {
   __typename: "User";
   firstName: string;
-  lastName: string | null;
+  lastName: string;
 }
 
 export interface CreateTodo_createTodo_todo {

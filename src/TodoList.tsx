@@ -15,8 +15,8 @@ export const TodoList: React.FC<{
   completeTodo: (id: string) => void;
   deleteTodo: (id: string) => void;
 }> = ({ todos, completeTodo, deleteTodo }) => {
-  const createdByText = (createdBy: User) => {
-    return `${createdBy.firstName} ${createdBy.lastName || ''}`;
+  const userToString = (createdBy: User) => {
+    return `${createdBy.firstName} ${createdBy.lastName}`;
   };
 
   return (
@@ -27,11 +27,14 @@ export const TodoList: React.FC<{
             tabIndex={-1}
             disableRipple
             checked={todo.completed}
-            onChange={(_e, checked) => {
+            onChange={() => {
               completeTodo(todo.id);
             }}
           />
-          <ListItemText primary={todo.text} secondary={createdByText(todo.createdBy)} />
+          <ListItemText
+            primary={todo.text}
+            secondary={`added by: ${userToString(todo.createdBy)}`}
+          />
           <ListItemSecondaryAction>
             <IconButton
               aria-label="Delete"
